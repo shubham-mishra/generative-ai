@@ -75,7 +75,7 @@ def main():
     docs = load_documents(csv_path)
     embeddings = OpenAIEmbeddings()
     vector_store = initialize_vector_store(embeddings, docs)
-    retriever = vector_store.as_retriever()
+    retriever = vector_store.as_retriever(search_kwargs={'k': 5})
     rag_chain = create_rag_chain(llm, retriever)
     
     while True:
