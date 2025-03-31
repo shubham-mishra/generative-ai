@@ -133,32 +133,31 @@ Break down the provided text into simple, factual, and self-contained propositio
 """
 evaluation_prompt_template = """
 Please evaluate the following proposition based on the criteria below:
-- **Accuracy**: Rate from 1-10 based on how well the proposition reflects the original text.
-- **Clarity**: Rate from 1-10 based on how easy it is to understand the proposition without additional context.
-- **Completeness**: Rate from 1-10 based on whether the proposition includes necessary details (e.g., dates, qualifiers).
-- **Conciseness**: Rate from 1-10 based on whether the proposition is concise without losing important information.
 
-Example:
-Docs: In 1969, Neil Armstrong became the first person to walk on the Moon during the Apollo 11 mission.
+- **Accuracy (1-10)**: How well does the proposition reflect the original text? Is it factually correct?
+- **Clarity (1-10)**: Is the proposition easy to understand on its own?
+- **Completeness (1-10)**: Does the proposition contain necessary details (e.g., names, dates, qualifiers) to be fully meaningful?
+- **Conciseness (1-10)**: Is the proposition free from unnecessary details while preserving key information?
 
-Propositons_1: Neil Armstrong was an astronaut.
-Evaluation_1: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
+If a score is below 7, briefly justify why.
 
-Propositons_2: Neil Armstrong walked on the Moon in 1969.
-Evaluation_3: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
+### Example:
+Original Text: The Eiffel Tower, completed in 1889, is one of the most visited landmarks in the world and stands at 330 meters tall.
 
-Propositons_3: Neil Armstrong was the first person to walk on the Moon.
-Evaluation_3: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
+**Proposition 1:** The Eiffel Tower was completed in 1889.  
+Evaluation: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
 
-Propositons_4: Neil Armstrong walked on the Moon during the Apollo 11 mission.
-Evaluation_4: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
+**Proposition 2:** The Eiffel Tower is one of the most visited landmarks in the world.  
+Evaluation: "accuracy": 10, "clarity": 10, "completeness": 9, "conciseness": 10
+Justification: The proposition is missing the year of completion, which could add more context.
 
-Propositons_5: The Apollo 11 mission occurred in 1969.
-Evaluation_5: "accuracy": 10, "clarity": 10, "completeness": 10, "conciseness": 10
+**Proposition 3:** The Eiffel Tower is a very tall building.  
+Evaluation: "accuracy": 5, "clarity": 8, "completeness": 5, "conciseness": 10  
+Justification: The phrase "very tall" is vague, and the specific height is missing.
 
-Format:
-Proposition: "{proposition}"
-Original Text: "{original_text}"
+### Format:
+**Proposition:** "{proposition}"  
+**Original Text:** "{original_text}"
 """
 # Main execution flow
 def main():
