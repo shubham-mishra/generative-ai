@@ -122,14 +122,6 @@ Throughout his life, Einstein continued to develop his theories and advocate for
 Einstein spent his later years at the Institute for Advanced Study in Princeton, where he worked on a unified field theory that aimed to merge gravity and electromagnetism. Though he was unable to complete this work, his contributions to science remain among the most influential in history.
 """
 # Define prompts for proposition generation and evaluation
-system_prompt = """Please break down the following text into simple, self-contained propositions. Ensure that each proposition meets the following criteria:
-
-1. Express a Single Fact: Each proposition should state one specific fact or claim.
-2. Be Understandable Without Context: The proposition should be self-contained, meaning it can be understood without needing additional context.
-3. Use Full Names, Not Pronouns: Avoid pronouns or ambiguous references; use full entity names.
-4. Include Relevant Dates/Qualifiers: If applicable, include necessary dates, times, and qualifiers to make the fact precise.
-5. Contain One Subject-Predicate Relationship: Focus on a single subject and its corresponding action or attribute, without conjunctions or multiple clauses."""
-
 system_prompt = """
 Break down the provided text into simple, factual, and self-contained propositions. Ensure each proposition meets the following criteria:
 **Express a Single Fact**: Each proposition must convey only one specific fact, claim, or piece of information. Avoid combining multiple ideas.
