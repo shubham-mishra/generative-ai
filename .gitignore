@@ -1,3 +1,4 @@
 rag/.env
+.env
 rag/test_rag.py
 data/*

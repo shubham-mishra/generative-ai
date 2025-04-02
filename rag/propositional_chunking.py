@@ -24,7 +24,6 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
-from langchain_core.prompts import ChatPromptTemplate
 from typing import List
 from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
 from pydantic import BaseModel, Field
