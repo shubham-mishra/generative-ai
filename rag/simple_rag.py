@@ -88,7 +88,6 @@ def store_document_vectorstore(embeddings, docs):
     print(f'INSERTED {len(doc_ids)} TO VECTOR DB....')
     return vector_store
 
-# Create retrieval-augmented generation (RAG) chain
 def create_rag_chain(llm, retriever):
     """
     Creates a retrieval-augmented generation (RAG) chain for processing user queries.
